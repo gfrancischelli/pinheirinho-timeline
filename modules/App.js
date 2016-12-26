@@ -1,15 +1,23 @@
-import React from 'react';
-import { Component } from 'react';
-import { render } from 'react-dom';
+import React, { Component } from 'react';
+import { Router } from 'rect-router';
 import { Link } from 'react-router';
 
 class App extends Component {
+  static propTypes = {
+    routes: PropTypes.object.isRequired,
+    history: PropTypes.object.isRequired,
+  }
+
+  get content() {
+    return (<Router
+      routes={this.props.routes}
+      history={this.props.history} />)
+  }
+
   render() {
     return (
       <div>
-        <h2>Linha do Tempo</h2>
-        <Link to='/posts'>posts</Link>
-        { this.props.children }
+        {this.content}
       </div>
     );
   }
