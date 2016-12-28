@@ -6,8 +6,6 @@ import routes from './src/routes';
 
 // Components
 import App from './src/App';
-import Timeline from './src/components/Timeline';
-import TimelineItem from './src/components/TimelineItem';
 
 render((
   <App history={browserHistory}
