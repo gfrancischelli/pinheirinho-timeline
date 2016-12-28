@@ -27,18 +27,33 @@ class TimelineItem extends Component {
     const date = new Date(data);
     return (
       <div
-        style={ {cursor: 'pointer'} }
+        className='timeline-item'
         onClick={ this.handleClick }>
-        <span>
-          <h6>{ `${date.getMonth().toLocaleString('pt-BR')}/${date.getFullYear()}` }</h6>
-        </span>
-        <h5>{ title }</h5>
-        { this.state.open == 0 ? null:
-        <div
-          className='timeline-item__content'
-          dangerouslySetInnerHTML={{__html:content}}>
+        <div>
+          <h6>
+            { `${date.getMonth().toLocaleString('pt-BR')}/${date.getFullYear()}` }
+          </h6>
+          <h4> { title }</h4>
         </div>
+
+        { this.state.open == 0 ? null:
+          <div
+            className='timeline-item__content'
+            dangerouslySetInnerHTML={{__html:content}}>
+          </div>
         }
+
+        <style jsx>{`
+          .timeline-item {
+            cursor: pointer;
+            margin-bottom: 20px;
+          }
+
+          .timeline-item h6,
+          .timeline-item h4 {
+            display: inline;
+          }
+        `}</style>
       </div>
     )
   }

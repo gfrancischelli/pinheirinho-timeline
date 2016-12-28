@@ -11,7 +11,7 @@ class Timeline extends Component {
   constructor() {
     super();
     this.state = {
-      posts: { results: [], next: null }, 
+      posts: { results: [], next: true }, 
     }
 
     this.addPage = this.addPage.bind(this);

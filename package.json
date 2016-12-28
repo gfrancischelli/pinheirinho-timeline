@@ -13,7 +13,8 @@
   "dependencies": {
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
-    "react-router": "^3.0.0"
+    "react-router": "^3.0.0",
+    "styled-jsx": "^0.3.0"
   },
   "devDependencies": {
     "babel-core": "^6.21.0",
